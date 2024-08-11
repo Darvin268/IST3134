@@ -1,0 +1,12 @@
+pig code-- Load the dataset
+charts = LOAD '/user/hadoop/spotify/charts.csv' USING PigStorage(',') 
+        AS (title:chararray, rank:int, date:chararray, artist:chararray, url:chararray, region:chararray, chart:chararray, trend:chararray, streams:int);
+
+-- Order tracks by number of streams in descending order
+top_tracks = ORDER charts BY streams DESC;
+
+-- Limit the result to the top 10 tracks
+top_10_tracks = LIMIT top_tracks 10;
+
+-- Dump the top 10 tracks to the console
+DUMP top_10_tracks;

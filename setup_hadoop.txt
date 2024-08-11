@@ -1,0 +1,8 @@
+# Switch to hadoop user
+sudo su - Hadoop
+
+# Start all Hadoop services
+start-all.sh
+
+# Verify the status of Hadoop services
+hdfs dfs -ls /user/hadoop/spotify/

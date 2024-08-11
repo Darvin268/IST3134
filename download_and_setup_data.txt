@@ -1,0 +1,9 @@
+Download the Spotify dataset from S3aws
+wget https://bigdata-assignment.s3.amazonaws.com/spotify.zip
+
+# Unzip the dataset
+unzip spotify.zip
+
+# Move the dataset to Hadoop's directory
+hdfs dfs -mkdir -p /user/hadoop/spotify
+hdfs dfs -put charts.csv /user/hadoop/spotify/
